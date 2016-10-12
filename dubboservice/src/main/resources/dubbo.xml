@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+	http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	
+	<!-- 本机服务dubbo 服务定义 -->
+	<dubbo:application name="test.test"
+		owner="oyz" />
+
+	<!-- 通用配置 -->
+	<dubbo:protocol name="dubbo" port="20880" />
+	<dubbo:registry protocol="zookeeper" address="127.0.0.1:2181" />
+	<!-- <dubbo:monitor protocol="${dubbo.monitor.protocol}" /> -->
+	<dubbo:provider retries="0" timeout="50000" threads="400"/>
+	
+	<dubbo:service interface="service.HumanService" ref="humanServiceImpl" />
+</beans>
