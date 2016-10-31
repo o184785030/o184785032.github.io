@@ -14,7 +14,9 @@ import org.mybatis.spring.SqlSessionFactoryBean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.core.io.Resource;
 
+import dao.HumanDao;
 import entity.Human;
+import utils.SpringBeanUtils;
 
 public class HumanDaoTest {
 	
@@ -39,20 +41,11 @@ public class HumanDaoTest {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-		List<Integer> list = new ArrayList<>();
-		list.add(1);
-		list.add(2);
-		list.add(3);
-		for(int i=0;i<list.size();i++){
-			if(i==1){list.remove(2);
-			}
-				
-			System.out.println(list.get(i));
-		}
-		for(Integer i:list){
-			System.out.println(i);
-		}
-		ThreadPoolExecutor thereeee = new ThreadPoolExecutor();
-		Executors.new
+		//HumanDao humanDao = (HumanDao) SpringBeanUtils.getBean("humanDao");
+		//System.out.println(((HumanDao)SpringBeanUtils.getBean("humanDao")).queryHumanById(1).getName());
+		System.out.println(System.getProperty("wcc.root.path"));
+		System.out.println(System.getenv("wcc.root.path"));
+		
+		System.out.println(("ssssss".split("_"))[1]);
 	}
 }

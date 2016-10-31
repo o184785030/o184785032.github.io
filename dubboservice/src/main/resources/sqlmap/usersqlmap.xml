@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="user" >
+
+   <select id="selectUser"  resultType="entity.User" parameterType="serviceimpl.query.UserQuery">
+ 	   select *  
+ 	   	from user 
+ 	   where 
+ 	   	 <if test="name !=null ">
+ 	   	 	name=#{name} and 
+ 	   	 </if>
+ 	   	 <if test="loginPasswd !=null ">
+ 	   	 	loginPasswd=#{loginPasswd}
+ 	   	 </if>
+   </select>
+   
+   <insert id="insertUser"  parameterType="entity.User">
+ 	   insert into user(LoginAccount,LoginPasswd,Name,Grade,Score,Phone) value(  
+ 	   	 <if test="loginCount !=null ">
+ 	   	 	#{loginAccount},
+ 	   	 </if>
+ 	   	 <if test="loginPasswd !=null ">
+ 	   	 	#{loginPasswd},
+ 	   	 </if>
+ 	   	 <if test="name !=null ">
+ 	   	 	#{name},
+ 	   	 </if>
+ 	   	 <if test="grade !=null ">
+ 	   	 	#{grade},
+ 	   	 </if>
+ 	   	 <if test="score !=null ">
+ 	   	 	#{score},
+ 	   	 </if>
+ 	   	 <if test="score !=null ">
+ 	   	 	#{phome}
+ 	   	 </if>
+ 	   	 )
+   </insert>
+      
+</mapper>

@@ -34,7 +34,14 @@ public class DalUtils implements SqlSession{
 
 	@Override
 	public <T> T selectOne(String statement, Object parameter) {
-		// TODO Auto-generated method stub
+		try {
+			sqlSession = dalSqlSessionFactoryBean.getSqlSession();
+			return sqlSession.selectOne(statement, parameter);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
 		return null;
 	}
 
@@ -100,7 +107,14 @@ public class DalUtils implements SqlSession{
 
 	@Override
 	public int insert(String statement, Object parameter) {
-		// TODO Auto-generated method stub
+		try {
+			sqlSession = dalSqlSessionFactoryBean.getSqlSession();
+			return sqlSession.insert(statement, parameter);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			sqlSession.close();
+		}
 		return 0;
 	}
 

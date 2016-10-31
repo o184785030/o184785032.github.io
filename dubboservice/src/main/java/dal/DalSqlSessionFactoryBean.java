@@ -23,8 +23,8 @@ public class DalSqlSessionFactoryBean implements InitializingBean {
 	public void afterPropertiesSet() throws Exception {
 		sqlSessionFactoryBean = new SqlSessionFactoryBean();
 		sqlSessionFactoryBean.setDataSource(dataSource);
-		Resource ress = new ClassPathXmlApplicationContext().getResource("humansqlmap.xml") ;
-		sqlSessionFactoryBean.setMapperLocations(new Resource[]{ress});	
+		Resource ress = new ClassPathXmlApplicationContext().getResource("sqlmap-config.xml") ;
+		sqlSessionFactoryBean.setConfigLocation(ress);
 	}
 	
 	public SqlSession getSqlSession(){

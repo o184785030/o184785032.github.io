@@ -17,7 +17,7 @@
     <mvc:resources location="/js/" mapping="/js/**"/> 
 
 	<!-- 需要扫描带注解类的包 -->
-	<context:component-scan base-package="facade" />
+	<context:component-scan base-package="Export" />
 
 	<!-- 对于@RequestMapping标签的解析 可选配置 -->
 	<bean

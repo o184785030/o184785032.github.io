@@ -60,11 +60,11 @@ public class HumanDao implements InitializingBean{
 			//human.setName(new SimpleDateFormat("yy-mm-dd hh:mm:ss").format(new Date()));
 			
 			
-//			Human human = dalUtils.selectOne("selectHumanById");
-//			logger.error(String.valueOf(human.getAge()));
-//			System.out.println(human.getName());
-//			System.setProperty("log4j.configuration", "log4j.properties");
-//			System.out.println(System.getProperty("log4j.configuration"));
+			Human human = dalUtils.selectOne("selectHumanById");
+			logger.error(String.valueOf(human.getAge()));
+			System.out.println(human.getName());
+			System.setProperty("log4j.configuration", "log4j.properties");
+			System.out.println(System.getProperty("log4j.configuration"));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
